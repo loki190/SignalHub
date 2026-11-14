@@ -1,0 +1,369 @@
+/* Страница Aviator */
+.aviator-background {
+  min-height: 100vh;
+  background-image: url(../../../img/otherPage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.aviator-container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  background: rgba(0, 0, 0, 0.6);
+  padding: 20px;
+  position: relative;
+}
+
+.aviator-info-button {
+  position: absolute;
+  top: 45px;
+  right: 20px;
+  width: 40px;
+  height: 40px;
+  border-radius: 20px;
+  background: #ffd700;
+  border: none;
+  font-size: 22px;
+  font-weight: bold;
+  color: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.3);
+  transition: transform 0.2s;
+  z-index: 20;
+}
+
+.aviator-info-button:hover {
+  transform: scale(1.05);
+}
+
+.aviator-title-container {
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.aviator-title {
+  color: #ffd700;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+  text-decoration: underline;
+}
+
+.aviator-subtitle {
+  color: #8de8ad;
+  font-size: 12px;
+  margin-top: 8px;
+  letter-spacing: 1px;
+}
+
+.aviator-level-required {
+  color: #ff6b6b;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+.aviator-level-text {
+  color: #8de8ad;
+  font-size: 12px;
+  margin-top: 5px;
+}
+
+@keyframes aviatorPulse {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(1.03);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.aviator-circle-wrapper {
+  animation: aviatorPulse 3s ease-in-out infinite;
+  margin: 10px 0;
+}
+
+.aviator-circle-outer {
+  width: min(70vw, 280px);
+  height: min(70vw, 280px);
+  border-radius: 50%;
+  background: rgba(255, 215, 0, 0.15);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  box-shadow: 0 0 20px rgba(255, 215, 0, 0.3);
+}
+
+.aviator-circle-inner {
+  width: calc(min(70vw, 280px) - 20px);
+  height: calc(min(70vw, 280px) - 20px);
+  border-radius: 50%;
+  background: #1a1a1a;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border: 2px solid #ffd700;
+}
+
+.aviator-ready-text {
+  color: #ffd700;
+  font-size: 24px;
+  font-weight: bold;
+  letter-spacing: 3px;
+}
+
+.aviator-locked-text {
+  color: #ff6b6b;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  text-align: center;
+  padding: 0 10px;
+}
+
+.aviator-progress-container {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 80%;
+}
+
+.aviator-progress-background {
+  width: 100%;
+  height: 8px;
+  background: rgba(255, 255, 255, 0.2);
+  border-radius: 4px;
+  overflow: hidden;
+  margin-bottom: 15px;
+}
+
+.aviator-progress-fill {
+  height: 100%;
+  background: #ffd700;
+  border-radius: 4px;
+  transition: width 0.016s linear;
+}
+
+.aviator-progress-text {
+  color: #ffd700;
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 2px;
+}
+
+.aviator-coefficient-value {
+  font-size: 52px;
+  font-weight: bold;
+  text-shadow: 0 2px 10px rgba(0, 0, 0, 0.8);
+}
+
+.aviator-coefficient-label {
+  color: #8de8ad;
+  font-size: 12px;
+  letter-spacing: 2px;
+  margin-top: 8px;
+}
+
+.aviator-signal-button {
+  margin-top: 30px;
+  background: #ffd700;
+  padding: 14px 40px;
+  border-radius: 35px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  cursor: pointer;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+  transition: all 0.2s;
+}
+
+.aviator-signal-button:hover:not(:disabled) {
+  transform: scale(1.02);
+  box-shadow: 0 6px 20px rgba(0, 0, 0, 0.4);
+}
+
+.aviator-signal-button-disabled {
+  background: #666;
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.aviator-new-signal-button {
+  margin-top: 30px;
+  background: #ffd700;
+  padding: 14px 40px;
+  border-radius: 35px;
+  border: none;
+  font-size: 18px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  color: #1a1a1a;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.aviator-new-signal-button:hover {
+  transform: scale(1.02);
+}
+
+.aviator-waiting-container {
+  margin-top: 30px;
+  text-align: center;
+}
+
+.aviator-waiting-text {
+  color: #8de8ad;
+  font-size: 14px;
+  letter-spacing: 2px;
+}
+
+.aviator-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.aviator-modal-content {
+  width: 90%;
+  max-width: 400px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid #ffd700;
+}
+
+.aviator-modal-title {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+  text-decoration: underline;
+}
+
+.aviator-modal-section {
+  margin-bottom: 15px;
+}
+
+.aviator-modal-subtitle {
+  color: #8de8ad;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 8px;
+  text-decoration: underline;
+}
+
+.aviator-modal-text {
+  color: white;
+  font-size: 14px;
+  text-align: center;
+  margin-bottom: 10px;
+  line-height: 1.4;
+}
+
+.aviator-modal-subtext {
+  color: #ffd700;
+  font-size: 16px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.aviator-modal-info-text {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.aviator-modal-highlight {
+  color: #ffd700;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.aviator-highlight {
+  color: #ffd700;
+  font-weight: bold;
+}
+
+.aviator-modal-button {
+  width: 100%;
+  background: #ffd700;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+.aviator-modal-button:hover {
+  background: #ffed4a;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 550px) {
+  .aviator-title {
+    font-size: 18px;
+    letter-spacing: 2px;
+  }
+  
+  .aviator-subtitle {
+    font-size: 10px;
+  }
+  
+  .aviator-ready-text {
+    font-size: 20px;
+  }
+  
+  .aviator-coefficient-value {
+    font-size: 40px;
+  }
+  
+  .aviator-signal-button,
+  .aviator-new-signal-button {
+    padding: 12px 30px;
+    font-size: 14px;
+  }
+  
+  .aviator-info-button {
+    top: 35px;
+    right: 15px;
+    width: 35px;
+    height: 35px;
+    font-size: 18px;
+  }
+  
+  .aviator-modal-title {
+    font-size: 18px;
+  }
+  
+  @keyframes aviatorPulse {
+    0% { transform: scale(1); }
+    50% { transform: scale(1.02); }
+    100% { transform: scale(1); }
+  }
+}

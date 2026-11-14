@@ -1,0 +1,407 @@
+/* AdminPanel стили */
+.admin-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.admin-loading-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+.admin-loading-text {
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.admin-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 20px;
+  background: #2a2a2a;
+  border-bottom: 2px solid #ffd700;
+  flex-wrap: wrap;
+  gap: 15px;
+}
+
+.admin-title {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+}
+
+.admin-logout-button {
+  background: #ff6b6b;
+  padding: 10px 20px;
+  border-radius: 8px;
+  border: none;
+  color: white;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-logout-button:hover {
+  background: #ff5252;
+  transform: scale(1.02);
+}
+
+.admin-header-actions {
+  padding: 20px;
+}
+
+.admin-create-user-button {
+  width: 100%;
+  background: #8de8ad;
+  padding: 14px;
+  border-radius: 8px;
+  border: none;
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-create-user-button:hover {
+  background: #a0f0c0;
+  transform: scale(1.01);
+}
+
+.admin-filter-container {
+  position: relative;
+  margin: 0 20px 20px 20px;
+}
+
+.admin-filter-input {
+  width: 100%;
+  background: #2a2a2a;
+  border-radius: 8px;
+  padding: 12px 40px 12px 15px;
+  font-size: 14px;
+  color: white;
+  border: 1px solid #ffd700;
+  box-sizing: border-box;
+}
+
+.admin-filter-input:focus {
+  outline: none;
+  border-color: #8de8ad;
+}
+
+.admin-filter-input::placeholder {
+  color: #888;
+}
+
+.admin-reset-filter-button {
+  position: absolute;
+  right: 10px;
+  top: 50%;
+  transform: translateY(-50%);
+  background: none;
+  border: none;
+  color: #ffd700;
+  font-size: 16px;
+  cursor: pointer;
+  padding: 5px;
+}
+
+.admin-reset-filter-button:hover {
+  color: #ffed4a;
+}
+
+.admin-users-list {
+  flex: 1;
+  padding: 0 20px 20px 20px;
+}
+
+.admin-users-count {
+  color: #aaa;
+  font-size: 14px;
+  margin-bottom: 15px;
+}
+
+.admin-users-grid {
+  display: flex;
+  flex-direction: column;
+  gap: 15px;
+}
+
+.admin-user-card {
+  background: #2a2a2a;
+  border-radius: 12px;
+  padding: 15px;
+  border: 1px solid #ffd700;
+  transition: all 0.2s;
+}
+
+.admin-user-card:hover {
+  transform: translateX(5px);
+  border-color: #8de8ad;
+}
+
+.admin-user-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 10px;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.admin-user-id {
+  color: #ffd700;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.admin-status-badge {
+  padding: 4px 12px;
+  border-radius: 12px;
+}
+
+.admin-active-badge {
+  background: #8de8ad;
+}
+
+.admin-inactive-badge {
+  background: #ff6b6b;
+}
+
+.admin-status-text {
+  color: #1a1a1a;
+  font-size: 10px;
+  font-weight: bold;
+}
+
+.admin-user-info {
+  color: #ccc;
+  font-size: 13px;
+  margin-bottom: 5px;
+}
+
+.admin-user-actions {
+  display: flex;
+  gap: 10px;
+  margin-top: 12px;
+}
+
+.admin-action-button {
+  flex: 1;
+  padding: 8px;
+  border-radius: 6px;
+  border: none;
+  font-size: 12px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-deposit-button {
+  background: #ffd700;
+  color: #1a1a1a;
+}
+
+.admin-deposit-button:hover {
+  background: #ffed4a;
+  transform: scale(1.02);
+}
+
+.admin-refresh-button {
+  width: 100%;
+  margin-top: 20px;
+  padding: 12px;
+  background: #333;
+  border: 1px solid #ffd700;
+  border-radius: 8px;
+  color: #ffd700;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-refresh-button:hover:not(:disabled) {
+  background: #444;
+  transform: scale(1.01);
+}
+
+.admin-refresh-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+.admin-empty-container {
+  text-align: center;
+  padding: 50px 20px;
+}
+
+.admin-empty-text {
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+.admin-empty-subtext {
+  color: #888;
+  font-size: 14px;
+  margin-top: 8px;
+}
+
+/* Модальные окна AdminPanel */
+.admin-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.admin-modal-content {
+  width: 90%;
+  max-width: 400px;
+  background: #2a2a2a;
+  border-radius: 20px;
+  padding: 25px;
+  border: 2px solid #ffd700;
+}
+
+.admin-modal-title {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 20px;
+}
+
+.admin-input {
+  width: 100%;
+  background: rgba(255, 255, 255, 0.9);
+  border-radius: 8px;
+  padding: 12px 15px;
+  font-size: 16px;
+  color: #333;
+  border: none;
+  margin-bottom: 15px;
+  box-sizing: border-box;
+}
+
+.admin-input:focus {
+  outline: none;
+  box-shadow: 0 0 5px #ffd700;
+}
+
+.admin-modal-buttons {
+  display: flex;
+  gap: 10px;
+}
+
+.admin-cancel-button,
+.admin-create-button {
+  flex: 1;
+  padding: 12px;
+  border-radius: 8px;
+  border: none;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.2s;
+}
+
+.admin-cancel-button {
+  background: #666;
+  color: white;
+}
+
+.admin-cancel-button:hover {
+  background: #777;
+}
+
+.admin-create-button {
+  background: #ffd700;
+  color: #1a1a1a;
+}
+
+.admin-create-button:hover:not(:disabled) {
+  background: #ffed4a;
+}
+
+.admin-create-button:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+}
+
+/* Адаптив для планшетов */
+@media (min-width: 768px) and (max-width: 1024px) {
+  .admin-users-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 15px;
+  }
+  
+  .admin-user-card {
+    margin-bottom: 0;
+  }
+}
+
+/* Адаптив для десктопа */
+@media (min-width: 1025px) {
+  .admin-users-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 20px;
+  }
+  
+  .admin-user-card {
+    margin-bottom: 0;
+  }
+  
+  .admin-header {
+    padding: 20px 30px;
+  }
+  
+  .admin-header-actions,
+  .admin-filter-container,
+  .admin-users-list {
+    padding-left: 30px;
+    padding-right: 30px;
+  }
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 550px) {
+  .admin-header {
+    flex-direction: column;
+    text-align: center;
+  }
+  
+  .admin-title {
+    font-size: 18px;
+  }
+  
+  .admin-user-header {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+  
+  .admin-user-actions {
+    flex-direction: column;
+  }
+  
+  .admin-modal-title {
+    font-size: 18px;
+  }
+  
+  .admin-input {
+    font-size: 14px;
+  }
+}

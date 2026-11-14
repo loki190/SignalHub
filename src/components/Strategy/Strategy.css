@@ -1,0 +1,391 @@
+/* Страница стратегий */
+.strategy-background {
+  min-height: 100vh;
+  background-image: url(../../../img/otherPage.jpg);
+  background-size: cover;
+  background-position: center;
+  background-attachment: fixed;
+}
+
+.strategy-container {
+  min-height: 100vh;
+  background: rgba(0, 0, 0, 0.75);
+  padding: 20px 0 30px 0;
+}
+
+.strategy-header-section {
+  text-align: center;
+  margin-bottom: 20px;
+  padding: 0 20px;
+}
+
+.strategy-title {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+  letter-spacing: 2px;
+  margin-bottom: 8px;
+  text-decoration: underline;
+}
+
+.strategy-level-text {
+  color: #8de8ad;
+  font-size: 14px;
+  font-weight: bold;
+}
+
+.strategy-unlocked-text {
+  color: #aaa;
+  font-size: 12px;
+  margin-top: 4px;
+}
+
+.strategy-list {
+  padding: 0 16px 10px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.strategy-card {
+  background: rgba(26, 26, 26, 0.9);
+  border-radius: 12px;
+  padding: 16px;
+  border: 1px solid #ffd700;
+  cursor: pointer;
+  transition: all 0.2s;
+  text-align: left;
+  width: 100%;
+}
+
+.strategy-card:hover {
+  transform: translateX(5px);
+  background: rgba(26, 26, 26, 0.95);
+}
+
+.strategy-card-locked {
+  opacity: 0.6;
+  border-color: #666;
+}
+
+.strategy-card-locked:hover {
+  transform: none;
+}
+
+.strategy-header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+}
+
+.strategy-number {
+  width: 36px;
+  height: 36px;
+  border-radius: 18px;
+  background: #ffd700;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-shrink: 0;
+}
+
+.strategy-number-text {
+  color: #1a1a1a;
+  font-size: 16px;
+  font-weight: bold;
+}
+
+.strategy-info {
+  flex: 1;
+}
+
+.strategy-name {
+  color: #ffd700;
+  font-size: 16px;
+  font-weight: bold;
+  margin-bottom: 4px;
+}
+
+.strategy-name-locked {
+  color: #888;
+}
+
+.strategy-tags {
+  display: flex;
+  gap: 8px;
+}
+
+.strategy-game {
+  color: #8de8ad;
+  font-size: 12px;
+  background: rgba(141, 232, 173, 0.15);
+  padding: 2px 8px;
+  border-radius: 10px;
+}
+
+.lock-icon {
+  font-size: 24px;
+}
+
+.unlock-icon {
+  font-size: 20px;
+  color: #8de8ad;
+}
+
+.strategy-progress-container {
+  margin: 20px 20px 30px 20px;
+  text-align: center;
+}
+
+.strategy-progress-bar {
+  width: 100%;
+  height: 6px;
+  background: #333;
+  border-radius: 3px;
+  overflow: hidden;
+}
+
+.strategy-progress-fill {
+  height: 100%;
+  background: #ffd700;
+  border-radius: 3px;
+  transition: width 0.3s;
+}
+
+.strategy-progress-text {
+  color: #8de8ad;
+  font-size: 11px;
+  margin-top: 6px;
+}
+
+.strategy-modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(0, 0, 0, 0.85);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 1000;
+  padding: 20px;
+}
+
+.strategy-modal-content {
+  width: 90%;
+  max-width: 450px;
+  max-height: 85vh;
+  overflow-y: auto;
+  background: #1a1a1a;
+  border-radius: 20px;
+  padding: 20px;
+  border: 2px solid #ffd700;
+}
+
+.strategy-modal-title {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 12px;
+}
+
+.strategy-modal-tags {
+  display: flex;
+  justify-content: center;
+  gap: 8px;
+  margin-bottom: 20px;
+}
+
+.strategy-modal-game {
+  color: #8de8ad;
+  font-size: 12px;
+  background: rgba(141, 232, 173, 0.15);
+  padding: 4px 10px;
+  border-radius: 12px;
+}
+
+.strategy-modal-section {
+  margin-bottom: 15px;
+}
+
+.strategy-modal-subtitle {
+  color: #8de8ad;
+  font-size: 15px;
+  font-weight: bold;
+  margin-bottom: 6px;
+  text-decoration: underline;
+}
+
+.strategy-modal-text {
+  color: #ddd;
+  font-size: 13px;
+  line-height: 1.5;
+}
+
+.strategy-modal-pre {
+  white-space: pre-wrap;
+  font-family: monospace;
+  background: rgba(0, 0, 0, 0.3);
+  padding: 10px;
+  border-radius: 8px;
+}
+
+.strategy-modal-info-text {
+  color: white;
+  font-size: 13px;
+  margin-bottom: 4px;
+  line-height: 1.4;
+}
+
+.strategy-modal-highlight {
+  color: #ffd700;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+.strategy-modal-button {
+  width: 100%;
+  background: #ffd700;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+.strategy-modal-button:hover {
+  background: #ffed4a;
+}
+
+.strategy-lock-modal-title {
+  color: #ff6b6b;
+  font-size: 18px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.strategy-lock-modal-text {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 8px;
+}
+
+.strategy-lock-modal-subtext {
+  color: #ffd700;
+  font-size: 14px;
+  text-align: center;
+  font-weight: bold;
+}
+
+/* Deposit modal */
+.strategy-deposit-modal-title {
+  color: #ffd700;
+  font-size: 20px;
+  font-weight: bold;
+  text-align: center;
+  margin-bottom: 15px;
+}
+
+.strategy-deposit-modal-text {
+  color: white;
+  font-size: 15px;
+  text-align: center;
+  margin-bottom: 10px;
+}
+
+.strategy-deposit-modal-subtext {
+  color: #8de8ad;
+  font-size: 13px;
+  text-align: center;
+}
+
+.strategy-deposit-button {
+  width: 100%;
+  background: #ffd700;
+  padding: 14px;
+  border-radius: 25px;
+  border: none;
+  font-size: 16px;
+  font-weight: bold;
+  color: #1a1a1a;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+.strategy-deposit-button:hover {
+  background: #ffed4a;
+}
+
+.strategy-modal-cancel-button {
+  width: 100%;
+  background: #333;
+  padding: 12px;
+  border-radius: 25px;
+  border: none;
+  font-size: 14px;
+  font-weight: bold;
+  color: #aaa;
+  cursor: pointer;
+  margin-top: 10px;
+  transition: all 0.2s;
+}
+
+.strategy-modal-cancel-button:hover {
+  background: #444;
+}
+
+.strategy-loading-container {
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background: rgba(0, 0, 0, 0.7);
+}
+
+.strategy-loading-text {
+  color: #ffd700;
+  font-size: 18px;
+  font-weight: bold;
+}
+
+/* Адаптив для мобильных */
+@media (max-width: 550px) {
+  .strategy-title {
+    font-size: 18px;
+  }
+  
+  .strategy-name {
+    font-size: 14px;
+  }
+  
+  .strategy-card {
+    padding: 12px;
+  }
+  
+  .strategy-number {
+    width: 30px;
+    height: 30px;
+  }
+  
+  .strategy-number-text {
+    font-size: 14px;
+  }
+  
+  .lock-icon, .unlock-icon {
+    font-size: 20px;
+  }
+  
+  .strategy-modal-title {
+    font-size: 18px;
+  }
+}

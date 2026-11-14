@@ -1,38 +1,275 @@
-.App {
-  text-align: center;
+/* App.css - Полностью адаптивные стили */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+body {
+  margin: 0;
+  padding: 0;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, sans-serif;
+  background-color: #1a1a1a;
+  overflow-x: hidden;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+/* ========== МОБИЛЬНАЯ ВЕРСИЯ (ДО 768px) ========== */
+@media (max-width: 768px) {
+  .app-container-mobile {
+    min-height: 100vh;
+    display: flex;
+    flex-direction: column;
+    background-color: #1a1a1a;
+  }
+
+  .app-content-mobile {
+    flex: 1;
+    padding-bottom: 75px;
+  }
+
+  /* Нижняя навигация для мобильных */
+  .bottom-nav-mobile {
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(26, 26, 26, 0.95);
+    backdrop-filter: blur(10px);
+    padding: 8px 0 20px 0;
+    border-top: 1px solid rgba(141, 232, 173, 0.2);
+    box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+  }
+
+  .nav-item-mobile {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 5px 12px;
+    transition: all 0.2s;
+    color: #666;
+  }
+
+  .nav-item-mobile.active-mobile {
+    color: #8de8ad;
+    transform: translateY(-2px);
+  }
+
+  .nav-icon-mobile {
+    font-size: 24px;
+    margin-bottom: 4px;
+  }
+
+  .nav-label-mobile {
+    font-size: 10px;
+    font-weight: 600;
+    letter-spacing: 0.5px;
   }
 }
 
-.App-header {
-  background-color: #282c34;
+/* ========== ДЕСКТОПНАЯ ВЕРСИЯ (768px И ВЫШЕ) ========== */
+@media (min-width: 769px) {
+  .app-container-desktop {
+    min-height: 100vh;
+    display: flex;
+    background-color: #1a1a1a;
+  }
+
+  .app-content-desktop {
+    flex: 1;
+    margin-left: 280px;
+    padding: 20px;
+    min-height: 100vh;
+  }
+
+  /* Боковая навигация для десктопа */
+  .side-nav-desktop {
+    position: fixed;
+    left: 0;
+    top: 0;
+    bottom: 0;
+    width: 280px;
+    background: linear-gradient(180deg, #1a1a1a 0%, #0d0d0d 100%);
+    border-right: 1px solid rgba(141, 232, 173, 0.2);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 0;
+    z-index: 100;
+  }
+
+  .side-nav-header {
+    padding: 0 20px 30px 20px;
+    border-bottom: 1px solid rgba(141, 232, 173, 0.2);
+    margin-bottom: 20px;
+  }
+
+  .side-nav-header h2 {
+    color: #8de8ad;
+    font-size: 24px;
+    letter-spacing: 2px;
+  }
+
+  .nav-item-desktop {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 14px 25px;
+    margin: 5px 15px;
+    border-radius: 12px;
+    transition: all 0.3s;
+    color: #888;
+    font-size: 16px;
+    font-weight: 500;
+  }
+
+  .nav-item-desktop:hover {
+    background: rgba(141, 232, 173, 0.1);
+    color: #8de8ad;
+    transform: translateX(5px);
+  }
+
+  .nav-item-desktop.active-desktop {
+    background: rgba(141, 232, 173, 0.15);
+    color: #8de8ad;
+    border-left: 3px solid #8de8ad;
+  }
+
+  .nav-icon-desktop {
+    font-size: 22px;
+  }
+
+  .nav-label-desktop {
+    font-size: 15px;
+    font-weight: 600;
+    letter-spacing: 1px;
+  }
+
+  .logout-btn-desktop {
+    display: flex;
+    align-items: center;
+    gap: 15px;
+    background: none;
+    border: none;
+    cursor: pointer;
+    padding: 14px 25px;
+    margin: auto 15px 20px 15px;
+    border-radius: 12px;
+    transition: all 0.3s;
+    color: #ff6b6b;
+    font-size: 15px;
+    font-weight: 600;
+    border-top: 1px solid rgba(255, 107, 107, 0.2);
+    margin-top: auto;
+  }
+
+  .logout-btn-desktop:hover {
+    background: rgba(255, 107, 107, 0.1);
+    transform: translateX(5px);
+  }
+}
+
+/* ========== ОБЩИЕ СТИЛИ ========== */
+
+/* Экран загрузки */
+.loading-screen {
   min-height: 100vh;
   display: flex;
   flex-direction: column;
-  align-items: center;
   justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
+  align-items: center;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  color: #8de8ad;
+  gap: 20px;
 }
 
-.App-link {
-  color: #61dafb;
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid rgba(141, 232, 173, 0.2);
+  border-top-color: #8de8ad;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+/* Контейнер админа */
+.admin-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+}
+
+/* Контейнер логина */
+.login-container {
+  min-height: 100vh;
+  background: linear-gradient(135deg, #1a1a1a 0%, #0d0d0d 100%);
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+
+/* Стили для скролла */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #1a1a1a;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #8de8ad;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #6bc88a;
+}
+
+/* Адаптация для планшетов */
+@media (min-width: 769px) and (max-width: 1024px) {
+  .side-nav-desktop {
+    width: 240px;
   }
-  to {
-    transform: rotate(360deg);
+  
+  .app-content-desktop {
+    margin-left: 240px;
+  }
+  
+  .nav-label-desktop {
+    font-size: 13px;
+  }
+}
+
+/* Для очень маленьких мобильных устройств */
+@media (max-width: 480px) {
+  .bottom-nav-mobile {
+    padding-bottom: 15px;
+  }
+  
+  .nav-icon-mobile {
+    font-size: 20px;
+  }
+  
+  .nav-label-mobile {
+    font-size: 9px;
+  }
+  
+  .app-content-mobile {
+    padding-bottom: 65px;
   }
 }
